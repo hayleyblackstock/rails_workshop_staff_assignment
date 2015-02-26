@@ -1,17 +1,13 @@
 <h1><%= @person.full_name %></h1>
 
-
-
-<strong> Title: </strong>
-<%= @person.title %>
 <br>
-
-<strong> First Name: </strong>
-<%= @person.first_name %>
+<strong><%= link_to 'Edit Person', edit_person_path(@person) %></strong>
 <br>
+<strong><%= link_to 'Add Location' %></strong>
 
-<strong> Last Name: </strong>
-<%= @person.last_name %>
+<table>
+  <div>
 
-<br>
-<strong><%= link_to 'Edit', edit_person_path(@person) %></strong>
+
+  </div>
+</table>
