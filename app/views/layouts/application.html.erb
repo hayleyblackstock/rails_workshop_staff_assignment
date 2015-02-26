@@ -37,6 +37,27 @@
   </nav>
 
   <div class="container">
+
+    <% flash.each do |type, message| %>
+    <% if type == "notice" %>
+    <b>
+      <center>
+        <div class="alert alert-success">
+          <%= message %>
+        </div>
+      </center>
+    </b>
+    <% elsif type == "alert" %>
+    <b>
+      <center>
+        <div class="alert alert-danger">
+          <%= message %>
+        </div>
+      </center>
+    </b>
+    <% end %>
+    <% end %>
+    
     <%= yield %>
   </div>
 </body>

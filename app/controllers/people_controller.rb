@@ -13,6 +13,7 @@ class PeopleController < ApplicationController
     if @person.save
       redirect_to root_path, notice: "Person was created!"
     else
+      @new_edit_error = "You must enter a First name and Last name OR Title and Last name to be created!"
       render :new
     end
   end
@@ -22,7 +23,7 @@ class PeopleController < ApplicationController
   end
 
   def edit
-  @person = Person.find(params[:id])  
+  @person = Person.find(params[:id])
   end
 
 
@@ -31,6 +32,7 @@ class PeopleController < ApplicationController
     if @person.update(person_params)
       redirect_to people_path, notice: 'Person was updated!'
     else
+      @new_edit_error = "You must enter a First name and Last name OR Title and Last name to be updated!"
       render :edit
     end
   end
